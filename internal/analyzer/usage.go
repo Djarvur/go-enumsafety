@@ -539,6 +539,12 @@ func formatMessage(format string, args ...interface{}) string {
 		if validConstants, ok := args[1].([]string); ok {
 			return formatWithConstants(format, args[0].(string), validConstants)
 		}
+		// Handle two string arguments (e.g., typeName and constraint name)
+		if str1, ok1 := args[0].(string); ok1 {
+			if str2, ok2 := args[1].(string); ok2 {
+				return formatWithTwoStrings(format, str1, str2)
+			}
+		}
 	}
 
 	// For constraint violations, just use the type name
@@ -570,6 +576,14 @@ func formatWithConstants(format string, typeName string, validConstants []string
 // formatSimple formats a simple message with just a type name.
 func formatSimple(format string, typeName string) string {
 	return replaceFirst(format, "%s", typeName)
+}
+
+// formatWithTwoStrings formats a message with two string arguments.
+func formatWithTwoStrings(format string, str1 string, str2 string) string {
+	msg := format
+	msg = replaceFirst(msg, "%s", str1)
+	msg = replaceFirst(msg, "%s", str2)
+	return msg
 }
 
 // replaceFirst replaces the first occurrence of old with new in s.

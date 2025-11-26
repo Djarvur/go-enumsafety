@@ -48,7 +48,7 @@ var s2 Status = myVal         // ❌ Untyped constant, not part of enum
 ## Installation
 
 ```bash
-go install github.com/Djarvur/enumsafety/cmd/enumsafety@latest
+go install github.com/Djarvur/go-enumsafety/cmd/enumsafety@latest
 ```
 
 ## Quick Start
@@ -400,7 +400,7 @@ jobs:
         with:
           go-version: '1.22'
       - name: Install enumsafety
-        run: go install github.com/Djarvur/enumsafety/cmd/enumsafety@latest
+        run: go install github.com/Djarvur/go-enumsafety/cmd/enumsafety@latest
       - name: Run linter
         run: enumsafety ./...
 ```
