@@ -2,9 +2,11 @@
 package analyzer
 
 import (
+	"fmt"
 	"go/ast"
 	"go/token"
 	"go/types"
+	"strings"
 
 	"golang.org/x/tools/go/analysis"
 )
@@ -558,40 +560,15 @@ func formatMessage(format string, args ...interface{}) string {
 
 // formatWithConstants formats a message with valid constants.
 func formatWithConstants(format string, typeName string, validConstants []string) string {
-	constantsList := ""
-	for i, c := range validConstants {
-		if i > 0 {
-			constantsList += ", "
-		}
-		constantsList += c
-	}
-
-	// Replace placeholders
-	msg := format
-	msg = replaceFirst(msg, "%s", typeName)
-	msg = replaceFirst(msg, "%v", constantsList)
-	return msg
+	return fmt.Sprintf(format, typeName, strings.Join(validConstants, ", "))
 }
 
 // formatSimple formats a simple message with just a type name.
 func formatSimple(format string, typeName string) string {
-	return replaceFirst(format, "%s", typeName)
+	return fmt.Sprintf(format, typeName)
 }
 
 // formatWithTwoStrings formats a message with two string arguments.
 func formatWithTwoStrings(format string, str1 string, str2 string) string {
-	msg := format
-	msg = replaceFirst(msg, "%s", str1)
-	msg = replaceFirst(msg, "%s", str2)
-	return msg
-}
-
-// replaceFirst replaces the first occurrence of old with new in s.
-func replaceFirst(s, old, new string) string {
-	for i := 0; i < len(s); i++ {
-		if i+len(old) <= len(s) && s[i:i+len(old)] == old {
-			return s[:i] + new + s[i+len(old):]
-		}
-	}
-	return s
+	return fmt.Sprintf(format, str1, str2)
 }
