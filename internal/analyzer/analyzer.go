@@ -13,7 +13,7 @@ import (
 var Analyzer = &analysis.Analyzer{
 	Name:     "enumsafety",
 	Doc:      "check that quasi-enum types are only assigned their defined constants and satisfy definition constraints",
-	URL:      "https://github.com/Djarvur/go-areel",
+	URL:      "https://github.com/Djarvur/go-enumsafety",
 	Requires: []*analysis.Analyzer{inspect.Analyzer},
 	Run:      run,
 }
