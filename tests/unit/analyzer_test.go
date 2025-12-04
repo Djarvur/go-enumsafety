@@ -64,3 +64,50 @@ func TestUS6_UnmarshalTextMethod(t *testing.T) {
 	testdata := filepath.Join(wd, "..", "..", "internal", "testdata")
 	analysistest.Run(t, testdata, analyzer.Analyzer, "helpers")
 }
+
+// New tests for comprehensive coverage
+
+func TestConstraintViolations(t *testing.T) {
+	wd, err := os.Getwd()
+	if err != nil {
+		t.Fatal(err)
+	}
+	testdata := filepath.Join(wd, "..", "..", "internal", "testdata")
+	analysistest.Run(t, testdata, analyzer.Analyzer, "constraints_full")
+}
+
+func TestVarDeclarations(t *testing.T) {
+	wd, err := os.Getwd()
+	if err != nil {
+		t.Fatal(err)
+	}
+	testdata := filepath.Join(wd, "..", "..", "internal", "testdata")
+	analysistest.Run(t, testdata, analyzer.Analyzer, "vardecl")
+}
+
+func TestCompositeLiterals(t *testing.T) {
+	wd, err := os.Getwd()
+	if err != nil {
+		t.Fatal(err)
+	}
+	testdata := filepath.Join(wd, "..", "..", "internal", "testdata")
+	analysistest.Run(t, testdata, analyzer.Analyzer, "composite")
+}
+
+func TestDetectionEdgeCases(t *testing.T) {
+	wd, err := os.Getwd()
+	if err != nil {
+		t.Fatal(err)
+	}
+	testdata := filepath.Join(wd, "..", "..", "internal", "testdata")
+	analysistest.Run(t, testdata, analyzer.Analyzer, "detection_edge")
+}
+
+func TestCallExpressions(t *testing.T) {
+	wd, err := os.Getwd()
+	if err != nil {
+		t.Fatal(err)
+	}
+	testdata := filepath.Join(wd, "..", "..", "internal", "testdata")
+	analysistest.Run(t, testdata, analyzer.Analyzer, "call_expr")
+}

@@ -1,4 +1,4 @@
-// Package main provides the CLI entry point for go-areel.
+// Package main provides the CLI entry point for go-enumsafety.
 package main
 
 import (

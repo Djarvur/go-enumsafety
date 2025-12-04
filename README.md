@@ -4,7 +4,7 @@ A Go static analysis linter that enforces type safety for quasi-enum patterns, c
 
 [![Go Version](https://img.shields.io/badge/Go-1.22%2B-blue)](https://go.dev/)
 [![CI](https://github.com/Djarvur/go-enumsafety/workflows/CI/badge.svg)](https://github.com/Djarvur/go-enumsafety/actions)
-[![Coverage Status](https://coveralls.io/repos/github/Djarvur/go-enumsafety/badge.svg?branch=main)](https://coveralls.io/github/Djarvur/go-enumsafety?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/Djarvur/go-enumsafety/badge.svg?branch=master)](https://coveralls.io/github/Djarvur/go-enumsafety?branch=master)
 [![Go Report Card](https://goreportcard.com/badge/github.com/Djarvur/go-enumsafety)](https://goreportcard.com/report/github.com/Djarvur/go-enumsafety)
 [![GoDoc](https://pkg.go.dev/badge/github.com/Djarvur/go-enumsafety)](https://pkg.go.dev/github.com/Djarvur/go-enumsafety)
 
