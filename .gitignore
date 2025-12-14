@@ -34,5 +34,4 @@ go.work.sum
 
 # Local development files
 .agent/
-.specify/
 *.tgz
