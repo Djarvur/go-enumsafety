@@ -4,7 +4,7 @@ package main
 import (
 	"golang.org/x/tools/go/analysis/singlechecker"
 
-	"github.com/Djarvur/go-enumsafety/internal/analyzer"
+	"github.com/Djarvur/go-enumsafety/analyzer"
 )
 
 func main() {

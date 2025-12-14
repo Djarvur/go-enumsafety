@@ -33,5 +33,4 @@ go.work.sum
 # .vscode/
 
 # Local development files
-.agent/
 *.tgz

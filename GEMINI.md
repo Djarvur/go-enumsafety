@@ -34,7 +34,7 @@ cmd/
 
 ```bash
 # Run tests with coverage
-go test -coverprofile=coverage.out ./internal/analyzer
+go test -coverprofile=coverage.out ./analyzer
 go tool cover -func=coverage.out
 
 # Run all tests

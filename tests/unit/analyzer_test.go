@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/Djarvur/go-enumsafety/internal/analyzer"
+	"github.com/Djarvur/go-enumsafety/analyzer"
 	"golang.org/x/tools/go/analysis/analysistest"
 )
 
@@ -15,7 +15,7 @@ func TestUS1_LiteralAssignment(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	testdata := filepath.Join(wd, "..", "..", "internal", "testdata")
+	testdata := filepath.Join(wd, "..", "..", "testdata")
 	analysistest.Run(t, testdata, analyzer.Analyzer, "a")
 }
 
@@ -24,7 +24,7 @@ func TestUS2_UntypedConstant(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	testdata := filepath.Join(wd, "..", "..", "internal", "testdata")
+	testdata := filepath.Join(wd, "..", "..", "testdata")
 	analysistest.Run(t, testdata, analyzer.Analyzer, "a")
 }
 
@@ -33,7 +33,7 @@ func TestUS3_VariableConversion(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	testdata := filepath.Join(wd, "..", "..", "internal", "testdata")
+	testdata := filepath.Join(wd, "..", "..", "testdata")
 	analysistest.Run(t, testdata, analyzer.Analyzer, "a")
 }
 
@@ -43,7 +43,7 @@ func TestUS4_Uint8Optimization(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	testdata := filepath.Join(wd, "..", "..", "internal", "testdata")
+	testdata := filepath.Join(wd, "..", "..", "testdata")
 	analysistest.Run(t, testdata, analyzer.Analyzer, "optimization")
 }
 
@@ -52,7 +52,7 @@ func TestUS5_StringMethod(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	testdata := filepath.Join(wd, "..", "..", "internal", "testdata")
+	testdata := filepath.Join(wd, "..", "..", "testdata")
 	analysistest.Run(t, testdata, analyzer.Analyzer, "helpers")
 }
 
@@ -61,7 +61,7 @@ func TestUS6_UnmarshalTextMethod(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	testdata := filepath.Join(wd, "..", "..", "internal", "testdata")
+	testdata := filepath.Join(wd, "..", "..", "testdata")
 	analysistest.Run(t, testdata, analyzer.Analyzer, "helpers")
 }
 
@@ -72,7 +72,7 @@ func TestConstraintViolations(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	testdata := filepath.Join(wd, "..", "..", "internal", "testdata")
+	testdata := filepath.Join(wd, "..", "..", "testdata")
 	analysistest.Run(t, testdata, analyzer.Analyzer, "constraints_full")
 }
 
@@ -81,7 +81,7 @@ func TestVarDeclarations(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	testdata := filepath.Join(wd, "..", "..", "internal", "testdata")
+	testdata := filepath.Join(wd, "..", "..", "testdata")
 	analysistest.Run(t, testdata, analyzer.Analyzer, "vardecl")
 }
 
@@ -90,7 +90,7 @@ func TestCompositeLiterals(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	testdata := filepath.Join(wd, "..", "..", "internal", "testdata")
+	testdata := filepath.Join(wd, "..", "..", "testdata")
 	analysistest.Run(t, testdata, analyzer.Analyzer, "composite")
 }
 
@@ -99,7 +99,7 @@ func TestDetectionEdgeCases(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	testdata := filepath.Join(wd, "..", "..", "internal", "testdata")
+	testdata := filepath.Join(wd, "..", "..", "testdata")
 	analysistest.Run(t, testdata, analyzer.Analyzer, "detection_edge")
 }
 
@@ -108,6 +108,6 @@ func TestCallExpressions(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	testdata := filepath.Join(wd, "..", "..", "internal", "testdata")
+	testdata := filepath.Join(wd, "..", "..", "testdata")
 	analysistest.Run(t, testdata, analyzer.Analyzer, "call_expr")
 }
