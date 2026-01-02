@@ -34,3 +34,8 @@ go.work.sum
 
 # Local development files
 *.tgz
+
+.agent
+.specify/scripts/
+.specify/templates/
+
