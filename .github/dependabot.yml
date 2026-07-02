@@ -1,36 +1,45 @@
 version: 2
-
 updates:
-  # Go modules
-  - package-ecosystem: "gomod"
-    directory: "/"
+  - package-ecosystem: gomod
+    directory: /
     schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
+      interval: weekly
+      day: monday
+      time: '06:00'
+      timezone: UTC
     open-pull-requests-limit: 5
-    reviewers:
-      - "Djarvur"
-    labels:
-      - "dependencies"
-      - "go"
     commit-message:
-      prefix: "chore(deps)"
-      include: "scope"
+      prefix: deps
+      include: scope
+    labels:
+      - dependencies
+      - go
+    groups:
+      all-go-deps:
+        patterns:
+          - '*'
+        update-types:
+          - minor
+          - patch
 
-  # GitHub Actions
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: github-actions
+    directory: /
     schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
+      interval: weekly
+      day: monday
+      time: '06:00'
+      timezone: UTC
     open-pull-requests-limit: 5
-    reviewers:
-      - "Djarvur"
-    labels:
-      - "dependencies"
-      - "github-actions"
     commit-message:
-      prefix: "chore(ci)"
-      include: "scope"
+      prefix: ci
+      include: scope
+    labels:
+      - dependencies
+      - github-actions
+    groups:
+      all-github-actions:
+        patterns:
+          - '*'
+        update-types:
+          - minor
+          - patch
